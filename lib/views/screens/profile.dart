@@ -1,3 +1,6 @@
+
+
+
 import 'package:flutter/material.dart';
 import 'package:odisserr/models/core/recipe.dart';
 import 'package:odisserr/models/helper/recipe_helper.dart';
@@ -13,7 +16,10 @@ import 'package:odisserr/views/widgets/featured_recipe_card.dart';
 import 'package:odisserr/views/widgets/recipe_tile.dart';
 import 'package:odisserr/views/widgets/recommendation_recipe_card.dart';
 
-class HomePage extends StatelessWidget {
+import 'home_page.dart';
+
+
+class Profile extends StatelessWidget {
   final List<Recipe> featuredRecipe = RecipeHelper.featuredRecipe;
   final List<Recipe> recommendationRecipe = RecipeHelper.recommendationRecipe;
   final List<Recipe> newlyPostedRecipe = RecipeHelper.newlyPostedRecipe;
@@ -21,15 +27,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: Text('odisserr?',
+        title: Text('Perfil',
             style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w700)),
         showProfilePhoto: true,
         profilePhoto: AssetImage('assets/images/pp.png'),
         profilePhotoOnPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => Profile()));
+              .push(MaterialPageRoute(builder: (context) => HomePage()));
         },
-      ),
+        ),
       body: ListView(
         shrinkWrap: true,
         physics: BouncingScrollPhysics(),
