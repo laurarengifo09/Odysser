@@ -10,6 +10,7 @@ import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_app_bar.dart';
 import 'package:odisserr/views/widgets/dummy_search_bar.dart';
 import 'package:odisserr/views/widgets/featured_recipe_card.dart';
+import 'package:odisserr/views/widgets/profile_card.dart';
 import 'package:odisserr/views/widgets/recipe_tile.dart';
 import 'package:odisserr/views/widgets/recommendation_recipe_card.dart';
 
@@ -65,8 +66,7 @@ class Profile extends StatelessWidget {
                           );
                         },
                         itemBuilder: (context, index) {
-                          return FeaturedRecipeCard(
-                              data: featuredRecipe[index]);
+                          return ProfileCard(data: featuredRecipe[index]);
                         },
                       ),
                     ),

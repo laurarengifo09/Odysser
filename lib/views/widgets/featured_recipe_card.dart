@@ -20,7 +20,7 @@ class FeaturedRecipeCard extends StatelessWidget {
       child: Container(
           width: 400,
           height: 200,
-          // alignment: Alignment.topLeft,
+          alignment: Alignment.topLeft,
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           decoration: BoxDecoration(
             color: Colors.grey,
