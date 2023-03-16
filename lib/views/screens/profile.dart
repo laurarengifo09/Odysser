@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:odisserr/models/core/recipe.dart';
 import 'package:odisserr/models/helper/recipe_helper.dart';
@@ -18,7 +15,6 @@ import 'package:odisserr/views/widgets/recommendation_recipe_card.dart';
 
 import 'home_page.dart';
 
-
 class Profile extends StatelessWidget {
   final List<Recipe> featuredRecipe = RecipeHelper.featuredRecipe;
   final List<Recipe> recommendationRecipe = RecipeHelper.recommendationRecipe;
@@ -35,7 +31,7 @@ class Profile extends StatelessWidget {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => HomePage()));
         },
-        ),
+      ),
       body: ListView(
         shrinkWrap: true,
         physics: BouncingScrollPhysics(),
@@ -47,53 +43,16 @@ class Profile extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  height: 245,
+                  height: 150,
                   color: AppColor.primary,
                 ),
                 // Section 1 - Content
                 Column(
                   children: [
-                    // Search Bar
-                    DummySearchBar(
-                      routeTo: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => SearchPage()));
-                      },
-                    ),
-                    // Delicious Today - Header
-                    Container(
-                      margin: EdgeInsets.only(top: 12),
-                      padding: EdgeInsets.symmetric(horizontal: 16),
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Delicious Today',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'inter'),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => DeliciousTodayPage()));
-                            },
-                            child: Text('see all'),
-                            style: TextButton.styleFrom(
-                                primary: Colors.white,
-                                textStyle: TextStyle(
-                                    fontWeight: FontWeight.w400, fontSize: 14)),
-                          ),
-                        ],
-                      ),
-                    ),
-                    // Delicious Today - ListView
                     Container(
                       margin: EdgeInsets.only(top: 4),
-                      height: 220,
+                      height: 250,
+                      alignment: Alignment.center,
                       child: ListView.separated(
                         itemCount: featuredRecipe.length,
                         padding: EdgeInsets.symmetric(horizontal: 16),
