@@ -26,85 +26,105 @@ class ProfileCard extends StatelessWidget {
             color: Colors.grey,
             borderRadius: BorderRadius.circular(20),
           ),
-
-          // Recipe Card Info
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 160,
-                height: 160,
-                alignment: Alignment.topLeft,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15)),
-              ),
-              Container(
-                  child: Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                      alignment: Alignment.topLeft,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Ubicacion",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          ),
-                          Text(
-                            "Cali, Valle del Cauca",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(color: Colors.white, fontSize: 12),
-                          ),
-                        ],
-                      )),
+                    width: 160,
+                    height: 160,
+                    alignment: Alignment.topLeft,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15)),
+                  ),
                   Container(
-                      alignment: Alignment.topLeft,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Ubicacion",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          ),
-                          Text(
-                            "Cali, Valle del Cauca",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(color: Colors.white, fontSize: 12),
-                          ),
-                        ],
-                      )),
-                  Container(
-                      alignment: Alignment.topLeft,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Ubicacion",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(color: Colors.white, fontSize: 15),
-                          ),
-                          Text(
-                            "Cali, Valle del Cauca",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(color: Colors.white, fontSize: 12),
-                          ),
-                        ],
-                      ))
+                    children: [
+                      Container(
+                          alignment: Alignment.topLeft,
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Ubicacion",
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
+                              ),
+                              Text(
+                                "Cali, Valle del Cauca",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12),
+                              ),
+                            ],
+                          )),
+                      Container(
+                          alignment: Alignment.topLeft,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Ubicacion",
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
+                              ),
+                              Text(
+                                "Cali, Valle del Cauca",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12),
+                              ),
+                            ],
+                          )),
+                      Container(
+                          alignment: Alignment.topLeft,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Ubicacion",
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
+                              ),
+                              Text(
+                                "Cali, Valle del Cauca",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12),
+                              ),
+                            ],
+                          ))
+                    ],
+                  ))
                 ],
-              ))
+              ),
+              Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5)),
+              Container(
+                  width: 400,
+                  height: 40,
+                  alignment: Alignment.centerLeft,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(10),
+                  ))
             ],
           )),
     );
