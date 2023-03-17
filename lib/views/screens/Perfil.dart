@@ -105,6 +105,31 @@ class Perfil extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                Column(
+                  children: [
+                    SizedBox(
+                      width: 250,
+                      height: 30,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search),
+                          hintText: 'Search friends',
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(width: 1),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: BorderSide(width: 1),
+                          ),
+                        ),
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    )
+                  ],
+                ),
                 DataTable(
                   sortColumnIndex: 2,
                   sortAscending: false,
@@ -115,7 +140,6 @@ class Perfil extends StatelessWidget {
                           Text("UserName",
                               style: TextStyle(fontWeight: FontWeight.bold)),
                           SizedBox(width: 3),
-                          Icon(Icons.search, size: 16)
                         ],
                       ),
                     ),
@@ -177,6 +201,7 @@ class Perfil extends StatelessWidget {
                           ),
                           DataCell(Text("100")),
                           DataCell(Text("Colombia")),
+                          // DataCell(Image.asset('assets/images/user.png'))
                         ],
                         color: MaterialStateColor.resolveWith(
                             (states) => Colors.amber[100])),
