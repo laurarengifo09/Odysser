@@ -18,7 +18,7 @@ class Perfil extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          icon: Icon(Icons.map_sharp, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -29,17 +29,13 @@ class Perfil extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'PLAY',
+                  'CAMARA',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
                 SizedBox(width: 5),
-                Icon(
-                  Icons.play_arrow,
-                  size: 18,
-                )
               ],
             ),
             style: TextButton.styleFrom(
@@ -55,34 +51,32 @@ class Perfil extends StatelessWidget {
         children: [
           // Section 1 - Profile Picture Wrapper
           Container(
-            alignment: Alignment.bottomLeft,
-            color: Color.fromARGB(164, 255, 255, 255),
+            color: Colors.white,
             padding: EdgeInsets.symmetric(vertical: 24),
             child: GestureDetector(
               onTap: () {
                 print('Code to open file manager');
               },
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(),
+                  Text('a'),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        alignment: Alignment.bottomLeft,
-                        width: 400,
-                        height: 130,
-                        margin: EdgeInsets.only(bottom: 15),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-
-                          // Profile Picture
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 30), // Aquí agregamos el padding
+                        child: Container(
+                          width: 170,
+                          height: 170,
+                          decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(200)),
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -204,7 +198,7 @@ class Perfil extends StatelessWidget {
                           // DataCell(Image.asset('assets/images/user.png'))
                         ],
                         color: MaterialStateColor.resolveWith(
-                            (states) => Colors.amber[100])),
+                            (states) => Colors.amber)),
                     DataRow(
                       cells: [
                         DataCell(
