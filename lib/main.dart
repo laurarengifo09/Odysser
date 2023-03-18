@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Open Sans',
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: Perfil());
+        home: Profile());
   }
 }

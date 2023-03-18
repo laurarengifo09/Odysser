@@ -126,74 +126,74 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 // Content
-                Container(
-                  height: 174,
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    physics: BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: recommendationRecipe.length,
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    separatorBuilder: (context, index) {
-                      return SizedBox(width: 16);
-                    },
-                    itemBuilder: (context, index) {
-                      return RecommendationRecipeCard(
-                          data: recommendationRecipe[index]);
-                    },
-                  ),
-                )
+                // Container(
+                //   height: 174,
+                //   child: ListView.separated(
+                //     shrinkWrap: true,
+                //     physics: BouncingScrollPhysics(),
+                //     scrollDirection: Axis.horizontal,
+                //     itemCount: recommendationRecipe.length,
+                //     padding: EdgeInsets.symmetric(horizontal: 16),
+                //     separatorBuilder: (context, index) {
+                //       return SizedBox(width: 16);
+                //     },
+                //     itemBuilder: (context, index) {
+                //       return RecommendationRecipeCard(
+                //           data: recommendationRecipe[index]);
+                //     },
+                //   ),
+                // )
               ],
             ),
           ),
           // Section 3 - Newly Posted
-          Container(
-            margin: EdgeInsets.only(top: 14),
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Header
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Newly Posted',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'inter'),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => NewlyPostedPage()));
-                      },
-                      child: Text('see all'),
-                      style: TextButton.styleFrom(
-                          primary: Colors.black,
-                          textStyle: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 14)),
-                    ),
-                  ],
-                ),
-                // Content
-                ListView.separated(
-                  shrinkWrap: true,
-                  itemCount: 3 ?? newlyPostedRecipe.length,
-                  physics: NeverScrollableScrollPhysics(),
-                  separatorBuilder: (context, index) {
-                    return SizedBox(height: 16);
-                  },
-                  itemBuilder: (context, index) {
-                    return RecipeTile(
-                      data: newlyPostedRecipe[index],
-                    );
-                  },
-                ),
-              ],
-            ),
-          )
+          // Container(
+          //   margin: EdgeInsets.only(top: 14),
+          //   padding: EdgeInsets.symmetric(horizontal: 16),
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       // Header
+          //       Row(
+          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //         children: [
+          //           Text(
+          //             'Newly Posted',
+          //             style: TextStyle(
+          //                 fontSize: 16,
+          //                 fontWeight: FontWeight.w600,
+          //                 fontFamily: 'inter'),
+          //           ),
+          //           TextButton(
+          //             onPressed: () {
+          //               Navigator.of(context).push(MaterialPageRoute(
+          //                   builder: (context) => NewlyPostedPage()));
+          //             },
+          //             child: Text('see all'),
+          //             style: TextButton.styleFrom(
+          //                 primary: Colors.black,
+          //                 textStyle: TextStyle(
+          //                     fontWeight: FontWeight.w400, fontSize: 14)),
+          //           ),
+          //         ],
+          //       ),
+          //       // Content
+          //       ListView.separated(
+          //         shrinkWrap: true,
+          //         itemCount: 3 ?? newlyPostedRecipe.length,
+          //         physics: NeverScrollableScrollPhysics(),
+          //         separatorBuilder: (context, index) {
+          //           return SizedBox(height: 16);
+          //         },
+          //         itemBuilder: (context, index) {
+          //           return RecipeTile(
+          //             data: newlyPostedRecipe[index],
+          //           );
+          //         },
+          //       ),
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );
