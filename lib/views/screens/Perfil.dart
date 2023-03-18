@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'dart:math';
 import 'dart:ui';
 
@@ -18,7 +19,7 @@ class Perfil extends StatelessWidget {
         title: Text('ODYSSER',
             style: TextStyle(
                 fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.bold,
                 fontSize: 16)),
         leading: IconButton(
           icon: Icon(Icons.map_sharp, color: Colors.white),
@@ -27,25 +28,13 @@ class Perfil extends StatelessWidget {
           },
         ),
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: Row(
-              children: [
-                Text(
-                  'CAMARA',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600),
-                ),
-                SizedBox(width: 5),
-              ],
-            ),
-            style: TextButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100))),
-          ),
+          IconButton(
+          padding: EdgeInsets.only(right: 10),
+          icon: Icon(Icons.camera_alt_rounded, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         ],
       ),
       body: ListView(
@@ -75,7 +64,8 @@ class Perfil extends StatelessWidget {
                           height: 170,
                           decoration: BoxDecoration(
                               color: Colors.grey,
-                              borderRadius: BorderRadius.circular(200)),
+                              borderRadius: BorderRadius.circular(200),
+                              image: DecorationImage(image: AssetImage('assets/images/user.png'))),
                         ),
                       ),
                       Column(
@@ -114,99 +104,96 @@ class Perfil extends StatelessWidget {
               ),
             ),
           ),
-          // Section 2 - User Info Wrapper
+          Container(
+            padding: EdgeInsets.only(left: 15),
+            child:
+          Text(
+            "GLOBAL RANKING",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: AppColor.primary,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+          ))),
+          Padding(padding: EdgeInsets.all(10),child:                           
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 100),
+              decoration: BoxDecoration(
+                border: Border(
+                      bottom: BorderSide(
+                          color: Colors.black.withOpacity(0.1),
+                          width: 1,
+                          ))))),
           Container(
               padding: EdgeInsets.all(10),
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    color: AppColor.primary,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    color: AppColor.primaryLight,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                        BoxShadow(
+                          color: Color(0xFF094542).withOpacity(0.4),
+                          spreadRadius: 1,
+                          blurRadius: 7,
+                          blurStyle: BlurStyle.normal,
+                          offset: Offset(5, 7), // changes position of shadow
+                  )
+                ],),
                 child: Column(
                   children: [
-                    Text(
-                      "GLOBAL RANKING",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 250,
-                      height: 30,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.search),
-                          hintText: 'Search friends',
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 20),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(width: 1),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50),
-                            borderSide: BorderSide(width: 1),
-                          ),
-                        ),
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ),
                     Container(
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.white24),
+                      child: SizedBox(
+                      width: 430,
+                      height: 40,
+                      child: TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.search, color: Colors.white54),
+                            hintText: 'Search friends',
+                            hintStyle: TextStyle(color: Colors.white54),
+                            enabledBorder: InputBorder.none
+                            ),
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                      )
+                    ),
+                    Padding(padding: EdgeInsets.all(10),child:                           Container(
+                              width: 420,
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(
+                                          color: Colors.black.withOpacity(0.1),
+                                          width: 1))))),
+                    Container(
+                      width: 430,
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(7)),
                       child: DataTable(
                         sortColumnIndex: 2,
                         sortAscending: false,
+                        headingTextStyle: TextStyle(color: AppColor.primary, fontWeight: FontWeight.bold, fontSize: 16),
+                        dataTextStyle: TextStyle(color: Colors.white),
                         columns: [
-                          DataColumn(
-                            label: Row(
-                              children: [
-                                Text("UserName",
+                      DataColumn(
+                            label: Center(child: Text("Name",
+                                    
                                     style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                                SizedBox(width: 3),
-                              ],
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center),)
                             ),
-                          ),
-                          DataColumn(
-                            label: Text(
-                              "Level",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                      DataColumn(
+                            label: Center(child: Text("Level",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center),)
                             ),
-                          ),
-                          DataColumn(
-                            label: Row(
-                              children: [
-                                Text(
-                                  "Country",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(width: 1),
-                                DropdownButton(
-                                  underline: Container(),
-                                  items: [
-                                    DropdownMenuItem(
-                                      child: Text("Colombia"),
-                                      value: "Colombia",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text("USA"),
-                                      value: "USA",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text("Spain"),
-                                      value: "Spain",
-                                    ),
-                                  ],
-                                  hint: Text(""),
-                                ),
-                              ],
-                            ),
-                          ),
+                      DataColumn(
+                            label: Center(child: Text("Country",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center),)
+                            )
                         ],
                         rows: [
                           DataRow(
@@ -228,8 +215,30 @@ class Perfil extends StatelessWidget {
                                 DataCell(Text("Colombia")),
                                 // DataCell(Image.asset('assets/images/user.png'))
                               ],
+                              
                               color: MaterialStateColor.resolveWith(
                                   (states) => Colors.amber)),
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/user.png',
+                                      height: 25,
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text("Laura"),
+                                  ],
+                                ),
+                              ),
+                              DataCell(Text("81")),
+                              DataCell(Text("Colombia")),
+                              
+                            ],
+                            color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.grey[500])
+                          ),
                           DataRow(
                             cells: [
                               DataCell(
@@ -246,8 +255,11 @@ class Perfil extends StatelessWidget {
                               ),
                               DataCell(Text("80")),
                               DataCell(Text("Colombia")),
+                              
                             ],
-                          ),
+                            color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.deepOrange[700])
+                          )
                         ],
                       ),
                     )
