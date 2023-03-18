@@ -1,3 +1,6 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:odisserr/views/utils/AppColor.dart';
@@ -49,7 +52,6 @@ class Perfil extends StatelessWidget {
         shrinkWrap: true,
         physics: BouncingScrollPhysics(),
         children: [
-          // Section 1 - Profile Picture Wrapper
           Container(
             color: Colors.white,
             padding: EdgeInsets.symmetric(vertical: 24),
@@ -59,14 +61,15 @@ class Perfil extends StatelessWidget {
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('a'),
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
+                    children: [
                       Padding(
-                        padding: EdgeInsets.only(
-                            left: 30), // Aquí agregamos el padding
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Aquí agregamos el padding
                         child: Container(
                           width: 170,
                           height: 170,
@@ -75,6 +78,36 @@ class Perfil extends StatelessWidget {
                               borderRadius: BorderRadius.circular(200)),
                         ),
                       ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                              padding:
+                                  EdgeInsets.only(top: 35, bottom: 2, left: 5),
+                              child: Text(
+                                "Nombre",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              )),
+                          Container(
+                              width: 300,
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(
+                                          color: Colors.grey.shade300,
+                                          width: 1)))),
+                          Container(
+                              padding: EdgeInsets.only(top: 7, left: 12),
+                              child: Text(
+                                "Level 1: Recolector Junior",
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black45),
+                              ))
+                        ],
+                      )
                     ],
                   ),
                 ],
@@ -83,24 +116,22 @@ class Perfil extends StatelessWidget {
           ),
           // Section 2 - User Info Wrapper
           Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Color.fromARGB(255, 230, 230, 230),
-                width: 1.0,
-                style: BorderStyle.solid,
-              ),
-            ),
-            child: Column(
-              children: [
-                Text(
-                  "GLOBAL RANKING",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Column(
+              padding: EdgeInsets.all(10),
+              child: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: AppColor.primary,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: Column(
                   children: [
+                    Text(
+                      "GLOBAL RANKING",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     SizedBox(
                       width: 250,
                       height: 30,
@@ -121,107 +152,108 @@ class Perfil extends StatelessWidget {
                         ),
                         style: TextStyle(fontSize: 16),
                       ),
-                    )
-                  ],
-                ),
-                DataTable(
-                  sortColumnIndex: 2,
-                  sortAscending: false,
-                  columns: [
-                    DataColumn(
-                      label: Row(
-                        children: [
-                          Text("UserName",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(width: 3),
-                        ],
-                      ),
                     ),
-                    DataColumn(
-                      label: Text(
-                        "Level",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    DataColumn(
-                      label: Row(
-                        children: [
-                          Text(
-                            "Country",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(width: 1),
-                          DropdownButton(
-                            underline: Container(),
-                            items: [
-                              DropdownMenuItem(
-                                child: Text("Colombia"),
-                                value: "Colombia",
-                              ),
-                              DropdownMenuItem(
-                                child: Text("USA"),
-                                value: "USA",
-                              ),
-                              DropdownMenuItem(
-                                child: Text("Spain"),
-                                value: "Spain",
-                              ),
-                            ],
-                            hint: Text(""),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                  rows: [
-                    DataRow(
-                        selected: true,
-                        cells: [
-                          DataCell(
-                            Row(
+                    Container(
+                      child: DataTable(
+                        sortColumnIndex: 2,
+                        sortAscending: false,
+                        columns: [
+                          DataColumn(
+                            label: Row(
                               children: [
-                                Image.asset(
-                                  'assets/images/user.png',
-                                  height: 25,
-                                ),
-                                SizedBox(width: 10),
-                                Text("Jose Escobar"),
+                                Text("UserName",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                SizedBox(width: 3),
                               ],
                             ),
                           ),
-                          DataCell(Text("100")),
-                          DataCell(Text("Colombia")),
-                          // DataCell(Image.asset('assets/images/user.png'))
-                        ],
-                        color: MaterialStateColor.resolveWith(
-                            (states) => Colors.amber)),
-                    DataRow(
-                      cells: [
-                        DataCell(
-                          Row(
-                            children: [
-                              Image.asset(
-                                'assets/images/user.png',
-                                height: 25,
+                          DataColumn(
+                            label: Text(
+                              "Level",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
                               ),
-                              SizedBox(width: 10),
-                              Text("Danielaaa"),
+                            ),
+                          ),
+                          DataColumn(
+                            label: Row(
+                              children: [
+                                Text(
+                                  "Country",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(width: 1),
+                                DropdownButton(
+                                  underline: Container(),
+                                  items: [
+                                    DropdownMenuItem(
+                                      child: Text("Colombia"),
+                                      value: "Colombia",
+                                    ),
+                                    DropdownMenuItem(
+                                      child: Text("USA"),
+                                      value: "USA",
+                                    ),
+                                    DropdownMenuItem(
+                                      child: Text("Spain"),
+                                      value: "Spain",
+                                    ),
+                                  ],
+                                  hint: Text(""),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                        rows: [
+                          DataRow(
+                              selected: true,
+                              cells: [
+                                DataCell(
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/user.png',
+                                        height: 25,
+                                      ),
+                                      SizedBox(width: 10),
+                                      Text("Jose Escobar"),
+                                    ],
+                                  ),
+                                ),
+                                DataCell(Text("100")),
+                                DataCell(Text("Colombia")),
+                                // DataCell(Image.asset('assets/images/user.png'))
+                              ],
+                              color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.amber)),
+                          DataRow(
+                            cells: [
+                              DataCell(
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/user.png',
+                                      height: 25,
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text("Danielaaa"),
+                                  ],
+                                ),
+                              ),
+                              DataCell(Text("80")),
+                              DataCell(Text("Colombia")),
                             ],
                           ),
-                        ),
-                        DataCell(Text("80")),
-                        DataCell(Text("Colombia")),
-                      ],
-                    ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
-              ],
-            ),
-          ),
+              ))
         ],
       ),
     );
