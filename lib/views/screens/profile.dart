@@ -27,7 +27,7 @@ class Profile extends StatelessWidget {
         title: Text('Perfil',
             style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w700)),
         showProfilePhoto: true,
-        profilePhoto: AssetImage('assets/images/pp.png'),
+        profilePhoto: AssetImage('assets/images/user.png'),
         profilePhotoOnPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => HomePage()));
@@ -45,7 +45,7 @@ class Profile extends StatelessWidget {
               children: [
                 Container(
                   height: 150,
-                  color: AppColor.primary,
+                  color: Colors.blue,
                 ),
                 // Section 1 - Content
                 Column(
@@ -96,15 +96,22 @@ class Profile extends StatelessWidget {
               color: Color.fromARGB(255, 186, 179, 179),
             ),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(padding: EdgeInsets.all(10)),
                 // Recipe Photo
                 Container(
-                  width: 210,
-                  height: 210,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Color.fromARGB(255, 0, 15, 22),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                          width: 210,
+                          height: 210,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Color.fromARGB(255, 0, 15, 22),
+                          ))
+                    ],
                   ),
                 ),
 
