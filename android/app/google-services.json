@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "357951992821",
+    "project_id": "odysser-e28f1",
+    "storage_bucket": "odysser-e28f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357951992821:android:ad8047efb835e0b090e6bc",
+        "android_client_info": {
+          "package_name": "com.example.odisserr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357951992821-ai5saqaouejjvrp4js9da1ogos466tfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOiQGz6URsKueFg76s4hiZdzMe3qRjgus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357951992821-ai5saqaouejjvrp4js9da1ogos466tfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
