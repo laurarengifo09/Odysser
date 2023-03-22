@@ -130,43 +130,8 @@ class Profile extends StatelessWidget {
             ),
           ),
           Container(
-            height: 20,
-            color: Color.fromARGB(255, 186, 179, 179),
-            padding: EdgeInsets.symmetric(horizontal: 45),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.gps_fixed,
-                  size: 14,
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 5),
-                  child: Text(
-                    'ubicacion',
-                    style: TextStyle(fontSize: 10),
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.comment,
-                  size: 12,
-                  color: Colors.black,
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 5),
-                  child: Text(
-                    '25',
-                    style: TextStyle(fontSize: 10),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
             height: 200,
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 186, 179, 179),
             ),
@@ -181,6 +146,58 @@ class Profile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                     color: Color.fromARGB(255, 0, 15, 22),
                   ),
+                  child: Column(
+                    children: [
+                      Container(
+            height: 20,
+            alignment: Alignment.bottomLeft,
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+              Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(color: Colors.white),
+                  child: 
+                  Row(children: [
+                    Icon(
+                      Icons.gps_fixed,
+                      size: 14,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 1),
+                        child: Text(
+                          'ubicacion',
+                          style: TextStyle(fontSize: 10),
+                        ),
+                  ),
+                ])),
+                Container(
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(color: Colors.white),
+                  child: 
+                  Row(children: [
+                    Icon(
+                      Icons.comment,
+                      size: 14,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 5),
+                        child: Text(
+                          'comentarios',
+                          style: TextStyle(fontSize: 10),
+                        ),
+                  ),
+                ])),
+              ],
+            ),
+            ],)
+          ),
+          
+                    ]),
                 ),
                 SizedBox(width: 20),
                 Container(
