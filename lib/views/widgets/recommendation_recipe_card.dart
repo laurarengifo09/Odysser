@@ -21,7 +21,7 @@ class RecommendationRecipeCard extends StatelessWidget {
             // Recipe Photo
             Container(
               height: 120,
-              width: 180,
+              width: 280,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.blueGrey,
@@ -49,16 +49,11 @@ class RecommendationRecipeCard extends StatelessWidget {
             Container(
               child: Row(
                 children: [
-                  SvgPicture.asset(
-                    'assets/icons/fire-filled.svg',
-                    color: Colors.black,
-                    width: 12,
-                    height: 12,
-                  ),
+                  Icon(Icons.location_city_outlined),
                   Container(
                     margin: EdgeInsets.only(left: 5),
                     child: Text(
-                      '2100 Cal',
+                      'ubicacion',
                       style: TextStyle(fontSize: 10),
                     ),
                   ),
@@ -66,14 +61,14 @@ class RecommendationRecipeCard extends StatelessWidget {
                     width: 10,
                   ),
                   Icon(
-                    Icons.alarm,
+                    Icons.comment,
                     size: 12,
                     color: Colors.black,
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 5),
                     child: Text(
-                      '25 min',
+                      '25',
                       style: TextStyle(fontSize: 10),
                     ),
                   ),

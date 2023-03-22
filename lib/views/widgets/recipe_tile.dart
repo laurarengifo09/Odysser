@@ -26,8 +26,8 @@ class RecipeTile extends StatelessWidget {
           children: [
             // Recipe Photo
             Container(
-              width: 70,
-              height: 70,
+              width: 250,
+              height: 2500,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 color: Colors.blueGrey,
@@ -45,14 +45,7 @@ class RecipeTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Recipe title
-                    Container(
-                      margin: EdgeInsets.only(bottom: 12),
-                      child: Text(
-                        data.title,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontFamily: 'inter'),
-                      ),
-                    ),
+
                     // Recipe Calories and Time
                     Row(
                       children: [
@@ -61,13 +54,6 @@ class RecipeTile extends StatelessWidget {
                           color: Colors.black,
                           width: 12,
                           height: 12,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 5),
-                          child: Text(
-                            data.calories,
-                            style: TextStyle(fontSize: 12),
-                          ),
                         ),
                         SizedBox(
                           width: 10,

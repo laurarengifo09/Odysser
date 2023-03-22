@@ -39,8 +39,8 @@ class ProfileCard extends StatelessWidget {
                     height: 160,
                     alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15)),
+                      color: Colors.white,
+                    ),
                   ),
                   Container(
                       child: Column(

@@ -27,7 +27,7 @@ class Profile extends StatelessWidget {
         title: Text('Perfil',
             style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w700)),
         showProfilePhoto: true,
-        profilePhoto: AssetImage('assets/images/pp.png'),
+        profilePhoto: AssetImage('assets/images/user.png'),
         profilePhotoOnPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => HomePage()));
@@ -39,13 +39,13 @@ class Profile extends StatelessWidget {
         children: [
           // Section 1 - Featured Recipe - Wrapper
           Container(
-            height: 350,
+            height: 290,
             color: Colors.white,
             child: Stack(
               children: [
                 Container(
                   height: 150,
-                  color: AppColor.primary,
+                  color: Colors.blue,
                 ),
                 // Section 1 - Content
                 Column(
@@ -75,90 +75,128 @@ class Profile extends StatelessWidget {
               ],
             ),
           ),
+
           // Section 2 - Recommendation Recipe
           Container(
-            margin: EdgeInsets.only(top: 16),
+            margin: EdgeInsets.only(top: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Header
+
+                // Content
+              ],
+            ),
+          ),
+
+          Container(
+            height: 200,
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 186, 179, 179),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(padding: EdgeInsets.all(10)),
+                // Recipe Photo
                 Container(
-                  margin: EdgeInsets.only(bottom: 16),
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Text(
-                    'Today recomendation based on your taste...',
-                    style: TextStyle(color: Colors.grey),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                          width: 210,
+                          height: 210,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Color.fromARGB(255, 0, 15, 22),
+                          ))
+                    ],
                   ),
                 ),
-                // Content
+
+                SizedBox(width: 20),
                 Container(
-                  height: 174,
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    physics: BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: recommendationRecipe.length,
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    separatorBuilder: (context, index) {
-                      return SizedBox(width: 16);
-                    },
-                    itemBuilder: (context, index) {
-                      return RecommendationRecipeCard(
-                          data: recommendationRecipe[index]);
-                    },
+                  width: 210,
+                  height: 210,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Color.fromARGB(255, 0, 15, 22),
                   ),
-                )
+                ),
+
+                // Recipe Info
+              ],
+            ),
+          ),
+          Container(
+            height: 20,
+            color: Color.fromARGB(255, 186, 179, 179),
+            padding: EdgeInsets.symmetric(horizontal: 45),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.gps_fixed,
+                  size: 14,
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 5),
+                  child: Text(
+                    'ubicacion',
+                    style: TextStyle(fontSize: 10),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Icon(
+                  Icons.comment,
+                  size: 12,
+                  color: Colors.black,
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 5),
+                  child: Text(
+                    '25',
+                    style: TextStyle(fontSize: 10),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 200,
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 186, 179, 179),
+            ),
+            child: Row(
+              children: [
+                Padding(padding: EdgeInsets.all(10)),
+                // Recipe Photo
+                Container(
+                  width: 210,
+                  height: 210,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Color.fromARGB(255, 0, 15, 22),
+                  ),
+                ),
+                SizedBox(width: 20),
+                Container(
+                  width: 210,
+                  height: 210,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Color.fromARGB(255, 0, 15, 22),
+                  ),
+                ),
+
+                // Recipe Info
               ],
             ),
           ),
           // Section 3 - Newly Posted
-          Container(
-            margin: EdgeInsets.only(top: 14),
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Header
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Newly Posted',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'inter'),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => NewlyPostedPage()));
-                      },
-                      child: Text('see all'),
-                      style: TextButton.styleFrom(
-                          primary: Colors.black,
-                          textStyle: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 14)),
-                    ),
-                  ],
-                ),
-                // Content
-                ListView.separated(
-                  shrinkWrap: true,
-                  itemCount: 3 ?? newlyPostedRecipe.length,
-                  physics: NeverScrollableScrollPhysics(),
-                  separatorBuilder: (context, index) {
-                    return SizedBox(height: 16);
-                  },
-                  itemBuilder: (context, index) {
-                    return RecipeTile(
-                      data: newlyPostedRecipe[index],
-                    );
-                  },
-                ),
-              ],
-            ),
-          )
         ],
       ),
     );
