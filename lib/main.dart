@@ -1,3 +1,4 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -8,18 +9,34 @@ import 'package:odisserr/views/screens/profile.dart';
 
 import 'package:flutter/widgets.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp().then((value) {
-    runApp(MyApp());
-  });
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "AIzaSyAOiQGz6URsKueFg76s4hiZdzMe3qRjgus",
+      appId: "1:357951992821:android:ad8047efb835e0b090e6bc",
+      messagingSenderId: "357951992821",
+      projectId: "odysser-e28f1",
+    ),
+  );
+  runApp(MyApp());
 }
 
-class MyAppState extends State<MyApp> {
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: MyAppSt());
+  }
+
+}
+
+class MyAppState extends State<MyAppSt> {
   @override
   void initState() {
-    getUsers();
     super.initState();
+    getUsers();
   }
 
   void getUsers() async {
@@ -34,7 +51,7 @@ class MyAppState extends State<MyApp> {
     }
   }
 
-  @override
+      @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -46,13 +63,11 @@ class MyAppState extends State<MyApp> {
   }
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+
+
+class MyAppSt extends StatefulWidget {
+  MyAppSt(): super();
 
   @override
-  MyAppState createdState() => MyAppState();
+  MyAppState createState() => MyAppState();
 }
