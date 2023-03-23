@@ -1,19 +1,57 @@
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:odisserr/views/screens/Perfil.dart';
 import 'package:odisserr/views/screens/auth/welcome_page.dart';
 import 'package:odisserr/views/screens/profile.dart';
 
-void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.black,
-    systemNavigationBarIconBrightness: Brightness.light,
-  ));
+import 'package:flutter/widgets.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "AIzaSyAOiQGz6URsKueFg76s4hiZdzMe3qRjgus",
+      appId: "1:357951992821:android:ad8047efb835e0b090e6bc",
+      messagingSenderId: "357951992821",
+      projectId: "odysser-e28f1",
+    ),
+  );
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+
+class MyApp extends StatelessWidget{
   @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: MyAppSt());
+  }
+
+}
+
+class MyAppState extends State<MyAppSt> {
+  @override
+  void initState() {
+    super.initState();
+    getUsers();
+  }
+
+  void getUsers() async {
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection("users");
+
+    QuerySnapshot users = await collectionReference.get();
+    if (users.docs.length != 0) {
+      for (var doc in users.docs) {
+        print(doc.data());
+      }
+    }
+  }
+
+      @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -21,6 +59,15 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Open Sans',
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: Profile());
+        home: Perfil());
   }
+}
+
+
+
+class MyAppSt extends StatefulWidget {
+  MyAppSt(): super();
+
+  @override
+  MyAppState createState() => MyAppState();
 }

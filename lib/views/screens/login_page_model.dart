@@ -8,30 +8,10 @@ import 'package:provider/provider.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
-class LoginPageWidget extends StatefulWidget {
-  const LoginPageWidget({Key? key}) : super(key: key);
-
-  @override
-  _LoginPageWidgetState createState() => _LoginPageWidgetState();
-}
-
-class _LoginPageWidgetState extends State<LoginPageWidget> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
+class Perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: Color(1),
       body: Column(
         mainAxisSize: MainAxisSize.max,
