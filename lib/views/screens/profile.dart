@@ -130,7 +130,6 @@ class Profile extends StatelessWidget {
             ),
           ),
           Container(
-            height: 200,
             padding: EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 186, 179, 179),
@@ -149,7 +148,6 @@ class Profile extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-            height: 20,
             alignment: Alignment.bottomLeft,
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Column(
@@ -161,37 +159,21 @@ class Profile extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(2),
                   decoration: BoxDecoration(color: Colors.white),
-                  child: 
-                  Row(children: [
-                    Icon(
-                      Icons.gps_fixed,
-                      size: 14,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 1),
-                        child: Text(
-                          'ubicacion',
-                          style: TextStyle(fontSize: 10),
-                        ),
-                  ),
-                ])),
+                  child:                     Icon(
+                      Icons.location_on_rounded,
+                      size: 20,)),
                 Container(
                   padding: EdgeInsets.all(2),
                   decoration: BoxDecoration(color: Colors.white),
-                  child: 
-                  Row(children: [
-                    Icon(
-                      Icons.comment,
-                      size: 14,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 5),
-                        child: Text(
-                          'comentarios',
-                          style: TextStyle(fontSize: 10),
-                        ),
-                  ),
-                ])),
+                  child:                     Icon(
+                      Icons.favorite,
+                      size: 20,)),
+                Container(
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(color: Colors.white),
+                  child:                     Icon(
+                      Icons.add_comment,
+                      size: 20,)),
               ],
             ),
             ],)

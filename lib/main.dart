@@ -59,7 +59,7 @@ class MyAppState extends State<MyAppSt> {
           fontFamily: 'Open Sans',
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: Perfil());
+        home: Profile());
   }
 }
 
