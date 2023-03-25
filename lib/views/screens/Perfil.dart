@@ -8,8 +8,9 @@ class Perfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+        decoration: BoxDecoration(gradient: LinearGradient(colors: [Color.fromARGB(255, 14, 61, 148),Color.fromARGB(255, 26, 99, 209)]))),
         brightness: Brightness.dark,
-        backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
         title: Text('ODYSSER',
@@ -107,7 +108,6 @@ class Perfil extends StatelessWidget {
             "GLOBAL RANKING",
             textAlign: TextAlign.left,
             style: TextStyle(
-              color: AppColor.primary,
               fontSize: 30,
               fontWeight: FontWeight.bold,
           ))),
@@ -125,7 +125,8 @@ class Perfil extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    color: AppColor.primaryLight,
+                    gradient: LinearGradient(colors: [Color.fromARGB(255, 13, 80, 204),Color.fromARGB(255, 0, 145, 48)], 
+                    begin: Alignment.topLeft, end: Alignment.bottomRight),
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                         BoxShadow(

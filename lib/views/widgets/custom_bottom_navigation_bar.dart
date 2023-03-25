@@ -34,7 +34,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               (widget.selectedIndex == 0)
                   ? BottomNavigationBarItem(
                       icon: SvgPicture.asset('assets/icons/home-filled.svg',
-                          color: AppColor.primary),
+                          color: Color.fromARGB(255, 15, 44, 124)),
                       label: '')
                   : BottomNavigationBarItem(
                       icon: SvgPicture.asset('assets/icons/home.svg',
@@ -43,7 +43,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               (widget.selectedIndex == 1)
                   ? BottomNavigationBarItem(
                       icon: SvgPicture.asset('assets/icons/discover-filled.svg',
-                          color: AppColor.primary, height: 28, width: 26),
+                          color:  Color.fromARGB(255, 15, 44, 124), height: 28, width: 26),
                       label: '')
                   : BottomNavigationBarItem(
                       icon: SvgPicture.asset('assets/icons/discover.svg',
@@ -51,12 +51,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       label: ''),
               (widget.selectedIndex == 2)
                   ? BottomNavigationBarItem(
-                      icon: SvgPicture.asset('assets/icons/bookmark-filled.svg',
-                          color: AppColor.primary),
+                      icon: Icon(Icons.play_circle_fill_rounded, color: Color.fromARGB(255, 15, 44, 124),size: 30),
                       label: '')
                   : BottomNavigationBarItem(
-                      icon: SvgPicture.asset('assets/icons/bookmark.svg',
-                          color: Colors.grey[600]),
+                      icon: Icon(Icons.play_circle_outline_rounded, color: Colors.grey[600],size: 30),
                       label: ''),
             ],
           ),

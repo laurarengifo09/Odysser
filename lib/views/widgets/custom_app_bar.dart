@@ -19,8 +19,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      flexibleSpace: Container(
+        decoration: BoxDecoration(gradient: LinearGradient(colors: [Color.fromARGB(255, 14, 61, 148),Color.fromARGB(255, 26, 99, 209)]))),
       brightness: Brightness.dark,
-      backgroundColor: AppColor.primary,
       title: title,
       elevation: 0,
       actions: [
@@ -32,8 +33,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: IconButton(
               onPressed: profilePhotoOnPressed,
               icon: Container(
-                width: 32,
-                height: 32,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
                   color: Colors.white,

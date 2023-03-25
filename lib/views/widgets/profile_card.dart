@@ -2,29 +2,30 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:odisserr/models/core/recipe.dart';
 import 'package:odisserr/views/screens/recipe_detail_page.dart';
 
 class ProfileCard extends StatelessWidget {
-  final Recipe data;
-  ProfileCard({@required this.data});
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => RecipeDetailPage(data: data)));
-      },
-      // Card Wrapper
       child: Container(
-          width: 400,
-          height: 200,
+          margin: EdgeInsets.all(20),
           alignment: Alignment.topLeft,
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: Colors.grey,
-            borderRadius: BorderRadius.circular(20),
+            boxShadow: [BoxShadow(
+              spreadRadius: 1,
+              blurRadius: 5,
+              color: Colors.black12,
+              offset: Offset(5,5)
+            )],
+            gradient: LinearGradient(colors: [Colors.green, Colors.blue],
+             begin: Alignment.topLeft, end: Alignment.bottomRight),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -35,64 +36,68 @@ class ProfileCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 160,
-                    height: 160,
+                    width: 150,
+                    height: 150,
                     alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
+                      image: DecorationImage(image: AssetImage('assets/images/profile2.jpg'), fit: BoxFit.cover),
                     ),
                   ),
                   Container(
-                      child: Column(
+                    child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                           alignment: Alignment.topLeft,
                           padding:
-                              EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                              EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Ubicacion",
+                                "Nombre",
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 12),
                               ),
                               Text(
                                 "Cali, Valle del Cauca",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
+                                    color: Colors.white, fontSize: 15),
                               ),
                             ],
                           )),
                       Container(
                           alignment: Alignment.topLeft,
                           padding: EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 10),
+                              horizontal: 15, vertical: 5),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Ubicacion",
+                                "Nivel",
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 12),
                               ),
                               Text(
-                                "Cali, Valle del Cauca",
+                                "Explorador Junior",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
+                                    color: Colors.white, fontSize: 15),
                               ),
                             ],
                           )),
                       Container(
                           alignment: Alignment.topLeft,
                           padding: EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 10),
+                              horizontal: 15, vertical: 5),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,13 +106,13 @@ class ProfileCard extends StatelessWidget {
                                 "Ubicacion",
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 12),
                               ),
                               Text(
                                 "Cali, Valle del Cauca",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
+                                    color: Colors.white, fontSize: 15),
                               ),
                             ],
                           ))
@@ -118,13 +123,25 @@ class ProfileCard extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5)),
               Container(
-                  width: 400,
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   height: 40,
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(10),
-                  ))
+                    borderRadius: BorderRadius.circular(5),
+                    gradient: LinearGradient(colors: [Color.fromARGB(0, 255, 255, 255), Color.fromARGB(52, 255, 255, 255), Color.fromARGB(0, 255, 255, 255)]),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
+                    Icon(Icons.bookmark_outlined,color: Colors.white),
+                    Icon(Icons.celebration_sharp,color: Colors.white),
+                    Icon(Icons.diamond,color: Colors.white),
+                    Icon(Icons.looks,color: Colors.white)
+                  ]),
+                  )
+                  
             ],
           )),
     );

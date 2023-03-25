@@ -11,22 +11,22 @@ import 'package:odisserr/views/widgets/custom_app_bar.dart';
 import 'package:odisserr/views/widgets/dummy_search_bar.dart';
 import 'package:odisserr/views/widgets/featured_recipe_card.dart';
 import 'package:odisserr/views/widgets/profile_card.dart';
+import 'package:odisserr/views/widgets/publicacion.dart';
 import 'package:odisserr/views/widgets/recipe_tile.dart';
 import 'package:odisserr/views/widgets/recommendation_recipe_card.dart';
 
 import 'home_page.dart';
 
 class Profile extends StatelessWidget {
-  final List<Recipe> featuredRecipe = RecipeHelper.featuredRecipe;
-  final List<Recipe> recommendationRecipe = RecipeHelper.recommendationRecipe;
-  final List<Recipe> newlyPostedRecipe = RecipeHelper.newlyPostedRecipe;
+  final List list = [1,2,3,4,5];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
         title: Text('Perfil',
             style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w700)),
-        showProfilePhoto: true,
+        showProfilePhoto: false,
         profilePhoto: AssetImage('assets/images/user.png'),
         profilePhotoOnPressed: () {
           Navigator.of(context)
@@ -39,36 +39,25 @@ class Profile extends StatelessWidget {
         children: [
           // Section 1 - Featured Recipe - Wrapper
           Container(
-            height: 290,
             color: Colors.white,
             child: Stack(
               children: [
                 Container(
                   height: 150,
-                  color: Colors.blue,
+                  decoration: BoxDecoration(gradient: LinearGradient(colors: [Color.fromARGB(255, 14, 61, 148),Color.fromARGB(255, 26, 99, 209)])),
                 ),
                 // Section 1 - Content
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 20, top: 20),
+                      child: Text("Mis Datos", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white)),
+                    ),
                     Container(
-                      margin: EdgeInsets.only(top: 4),
-                      height: 250,
                       alignment: Alignment.center,
-                      child: ListView.separated(
-                        itemCount: featuredRecipe.length,
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        physics: BouncingScrollPhysics(),
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        separatorBuilder: (context, index) {
-                          return SizedBox(
-                            width: 16,
-                          );
-                        },
-                        itemBuilder: (context, index) {
-                          return ProfileCard(data: featuredRecipe[index]);
-                        },
-                      ),
+                      child: ProfileCard()
                     ),
                   ],
                 )
@@ -78,124 +67,27 @@ class Profile extends StatelessWidget {
 
           // Section 2 - Recommendation Recipe
           Container(
-            margin: EdgeInsets.only(top: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.only(top: 5),
+            child: ListView(
+              shrinkWrap: true,
               children: [
-                // Header
-
-                // Content
-              ],
-            ),
-          ),
-
-          Container(
-            height: 200,
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 186, 179, 179),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(padding: EdgeInsets.all(10)),
-                // Recipe Photo
-                Container(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                          width: 210,
-                          height: 210,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Color.fromARGB(255, 0, 15, 22),
-                          ))
-                    ],
-                  ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Text("Mis Publicaciones", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                 ),
-
-                SizedBox(width: 20),
                 Container(
-                  width: 210,
-                  height: 210,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Color.fromARGB(255, 0, 15, 22),
-                  ),
+                  child: GridView.count(
+                            shrinkWrap: true,                 
+                            crossAxisCount: 2,
+                            children: List.generate(list.length, (index) {
+                              return Publicacion();
+                            }),
+                    ),
                 ),
-
-                // Recipe Info
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(15),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 186, 179, 179),
-            ),
-            child: Row(
-              children: [
-                Padding(padding: EdgeInsets.all(10)),
-                // Recipe Photo
-                Container(
-                  width: 210,
-                  height: 210,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Color.fromARGB(255, 0, 15, 22),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-            alignment: Alignment.bottomLeft,
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-              Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(2),
-                  decoration: BoxDecoration(color: Colors.white),
-                  child:                     Icon(
-                      Icons.location_on_rounded,
-                      size: 20,)),
-                Container(
-                  padding: EdgeInsets.all(2),
-                  decoration: BoxDecoration(color: Colors.white),
-                  child:                     Icon(
-                      Icons.favorite,
-                      size: 20,)),
-                Container(
-                  padding: EdgeInsets.all(2),
-                  decoration: BoxDecoration(color: Colors.white),
-                  child:                     Icon(
-                      Icons.add_comment,
-                      size: 20,)),
-              ],
-            ),
-            ],)
-          ),
-          
-                    ]),
-                ),
-                SizedBox(width: 20),
-                Container(
-                  width: 210,
-                  height: 210,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Color.fromARGB(255, 0, 15, 22),
-                  ),
-                ),
-
-                // Recipe Info
-              ],
-            ),
-          ),
-          // Section 3 - Newly Posted
+              ]
+              ),
+          )
         ],
       ),
     );
