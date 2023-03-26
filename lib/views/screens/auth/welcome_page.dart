@@ -15,10 +15,10 @@ class WelcomePage extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/bg.jpg'),
-                    fit: BoxFit.cover)),
+            // decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //         image: AssetImage('assets/images/bg.jpg'),
+            //         fit: BoxFit.cover)),
           ),
           Positioned(
             bottom: 0,
@@ -36,15 +36,15 @@ class WelcomePage extends StatelessWidget {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(bottom: 16),
-                        child: Text('odisserr?',
+                        child: Text('ODISSER',
                             style: TextStyle(
                                 fontFamily: 'inter',
                                 fontWeight: FontWeight.w700,
                                 fontSize: 32,
-                                color: Colors.white)),
+                                color: Color.fromARGB(255, 15, 44, 11))),
                       ),
-                      Text("Help you when you're odisserr",
-                          style: TextStyle(color: Colors.white)),
+                      // Text("Help you when you're odisserr",
+                      //     style: TextStyle(color: Colors.white)),
                     ],
                   ),
                   Column(

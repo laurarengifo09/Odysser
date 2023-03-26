@@ -1,9 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:odisserr/views/screens/auth/welcome_page.dart';
 import 'package:odisserr/views/screens/page_switcher.dart';
+import 'package:odisserr/views/screens/profile.dart';
 import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_text_field.dart';
+import 'package:odisserr/views/widgets/modals/register_modal.dart';
 
 class LoginModal extends StatelessWidget {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -46,8 +53,12 @@ class LoginModal extends StatelessWidget {
                 ),
               ),
               // Form
-              CustomTextField(title: 'Email', hint: 'youremail@email.com'),
               CustomTextField(
+                  // controller: emailController,
+                  title: 'Email',
+                  hint: 'youremail@email.com'),
+              CustomTextField(
+                  controller: passwordController,
                   title: 'Password',
                   hint: '**********',
                   obsecureText: true,
@@ -58,10 +69,58 @@ class LoginModal extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 60,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => PageSwitcher()));
+                  onPressed: () async {
+                    try {
+                      var users =
+                          FirebaseFirestore.instance.collection('users');
+                      var snapshot = await users
+                          .where('email',
+                              isEqualTo: emailController.text.toLowerCase())
+                          .where('password', isEqualTo: passwordController.text)
+                          .get();
+                      if (snapshot.docs.isNotEmpty) {
+                        UserCredential userCredential = await FirebaseAuth
+                            .instance
+                            .signInWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text,
+                        );
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => Profile()));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => PageSwitcher()));
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text("Usuario no registrado"),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: Text("Okay"),
+                                ),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                      Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  WelcomePage()));
+                                    },
+                                    child: Text('Register'))
+                              ],
+                            );
+                          },
+                        );
+                      }
+                    } on FirebaseAuthException catch (e) {
+                      if (e.code == "user not found") {
+                        print('usuario no creado');
+                      } else if (e.code == 'wrong password') {
+                        print('wrong password');
+                      }
+                    }
                   },
                   child: Text('Login',
                       style: TextStyle(
