@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +12,7 @@ import 'package:odisserr/views/screens/page_switcher.dart';
 import 'package:odisserr/views/screens/profile.dart';
 
 import 'package:flutter/widgets.dart';
+import 'package:odisserr/views/widgets/publicacion.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,14 +27,11 @@ void main() async {
   runApp(MyApp());
 }
 
-
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: MyAppSt());
+    return MaterialApp(home: MyAppSt());
   }
-
 }
 
 class MyAppState extends State<MyAppSt> {
@@ -56,7 +53,7 @@ class MyAppState extends State<MyAppSt> {
     }
   }
 
-      @override
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -64,14 +61,12 @@ class MyAppState extends State<MyAppSt> {
           fontFamily: 'Open Sans',
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: WelcomePage());
+        home: Profile());
   }
 }
 
-
-
 class MyAppSt extends StatefulWidget {
-  MyAppSt(): super();
+  MyAppSt() : super();
 
   @override
   MyAppState createState() => MyAppState();
