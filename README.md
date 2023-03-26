@@ -2,7 +2,7 @@
 
 ## Introduction
 
-odisserr is a Free Flutter Recipe App Starter Template that can help you develop a Recipe application much faster. You just need to add some adjustment to the frontend and you can create your own backend.
+
 
 ## App Screenshot
 <img src="https://github.com/mrezkys/odisserr/blob/main/demo/banner.jpg" width="auto" height="auto" >
