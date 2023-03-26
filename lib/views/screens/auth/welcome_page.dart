@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/modals/login_modal.dart';
 import 'package:odisserr/views/widgets/modals/register_modal.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class WelcomePage extends StatelessWidget {
   @override

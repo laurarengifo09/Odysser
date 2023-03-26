@@ -3,9 +3,19 @@ import 'package:odisserr/views/screens/page_switcher.dart';
 import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_text_field.dart';
 import 'package:odisserr/views/widgets/modals/login_modal.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class RegisterModal extends StatelessWidget {
+class RegisterModal extends StatefulWidget {
   @override
+  _RegisterModalState createState() => _RegisterModalState();
+}
+
+class _RegisterModalState extends State<RegisterModal> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   Widget build(BuildContext context) {
     return Wrap(
       children: [
@@ -47,12 +57,17 @@ class RegisterModal extends StatelessWidget {
                 ),
               ),
               // Form
-              CustomTextField(title: 'Email', hint: 'youremail@email.com'),
               CustomTextField(
+                  controller: emailController,
+                  title: 'Email',
+                  hint: 'youremail@email.com'),
+              CustomTextField(
+                  controller: nameController,
                   title: 'Full Name',
                   hint: 'Your Full Name',
                   margin: EdgeInsets.only(top: 16)),
               CustomTextField(
+                  controller: passwordController,
                   title: 'Password',
                   hint: '**********',
                   obsecureText: true,
@@ -69,6 +84,16 @@ class RegisterModal extends StatelessWidget {
                 height: 60,
                 child: ElevatedButton(
                   onPressed: () {
+                    FirebaseFirestore firestore = FirebaseFirestore.instance;
+                    CollectionReference users = firestore.collection('users');
+                    users.add({
+                      'name': nameController.text,
+                      'email': emailController.text,
+                      'password': passwordController.text,
+                    }).then((value) {
+                      print('user added');
+                      Navigator.pop(context);
+                    }).catchError((error) => ('fail'));
                     Navigator.of(context).pop();
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) => PageSwitcher()));

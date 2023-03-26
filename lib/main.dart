@@ -61,7 +61,7 @@ class MyAppState extends State<MyAppSt> {
           fontFamily: 'Open Sans',
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: Profile());
+        home: WelcomePage());
   }
 }
 
