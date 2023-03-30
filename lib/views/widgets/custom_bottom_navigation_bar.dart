@@ -43,7 +43,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               (widget.selectedIndex == 1)
                   ? BottomNavigationBarItem(
                       icon: SvgPicture.asset('assets/icons/discover-filled.svg',
-                          color:  Color.fromARGB(255, 15, 44, 124), height: 28, width: 26),
+                          color: Color.fromARGB(255, 15, 44, 124),
+                          height: 28,
+                          width: 26),
                       label: '')
                   : BottomNavigationBarItem(
                       icon: SvgPicture.asset('assets/icons/discover.svg',
@@ -51,10 +53,21 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                       label: ''),
               (widget.selectedIndex == 2)
                   ? BottomNavigationBarItem(
-                      icon: Icon(Icons.play_circle_fill_rounded, color: Color.fromARGB(255, 15, 44, 124),size: 30),
+                      icon: Icon(Icons.play_circle_fill_rounded,
+                          color: Color.fromARGB(255, 15, 44, 124), size: 30),
                       label: '')
                   : BottomNavigationBarItem(
-                      icon: Icon(Icons.play_circle_outline_rounded, color: Colors.grey[600],size: 30),
+                      icon: Icon(Icons.play_circle_outline_rounded,
+                          color: Colors.grey[600], size: 30),
+                      label: ''),
+              (widget.selectedIndex == 3)
+                  ? BottomNavigationBarItem(
+                      icon: Icon(Icons.account_circle_outlined,
+                          color: Color.fromARGB(255, 15, 44, 124), size: 30),
+                      label: '')
+                  : BottomNavigationBarItem(
+                      icon: Icon(Icons.account_circle_outlined,
+                          color: Colors.grey[600], size: 30),
                       label: ''),
             ],
           ),

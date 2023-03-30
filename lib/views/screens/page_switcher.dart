@@ -4,6 +4,7 @@ import 'package:odisserr/views/screens/bookmarks_page.dart';
 import 'package:odisserr/views/screens/explore_page.dart';
 import 'package:odisserr/views/screens/home_page.dart';
 import 'package:odisserr/views/screens/newHome.dart';
+import 'package:odisserr/views/screens/profile.dart';
 import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_bottom_navigation_bar.dart';
 
@@ -27,11 +28,7 @@ class _PageSwitcherState extends State<PageSwitcher> {
       extendBody: true,
       body: Stack(
         children: [
-          [
-            NewHome(),
-            Perfil(),
-            BookmarksPage(),
-          ][_selectedIndex],
+          [NewHome(), Perfil(), BookmarksPage(), Profile()][_selectedIndex],
           BottomGradientWidget(),
         ],
       ),
