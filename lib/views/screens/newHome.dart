@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:odisserr/views/utils/AppColor.dart';
+import 'package:odisserr/views/widgets/custom_post.dart';
 import 'package:odisserr/views/widgets/user_info_tile.dart';
 
 
@@ -36,6 +37,17 @@ class NewHome extends StatelessWidget {
         ),
         ],
       ),
+    
+    body: ListView(
+      shrinkWrap: true,
+      children: [
+        Container(
+          margin: EdgeInsets.all(10),
+          child: 
+          CustomPost(height: 350, width: 350),
+        )
+      ],
+    ) 
     );
   }
 }
