@@ -72,8 +72,9 @@ class CustomPostState extends State<CustomPost> {
                                         size: 25,
                                         color: Colors.red,
                                       )
-                                    : Icon(
+                                    : Icon(   
                                         Icons.favorite_border,
+                                        color: Colors.white,
                                         size: 25,
                                       ),
                                 onTap: () {
@@ -96,6 +97,7 @@ class CustomPostState extends State<CustomPost> {
                                   children: [
                                     Icon(
                                       Icons.add_comment,
+                                      color: Colors.white,
                                       size: 25,
                                     ),
                                     Text('$_comments'), // Mostrar el número de comentarios
