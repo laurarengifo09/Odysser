@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
+
 
 // ignore: must_be_immutable
 class CustomBottomNavigationBar extends StatefulWidget {
