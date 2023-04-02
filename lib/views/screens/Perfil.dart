@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
-import 'package:odisserr/views/widgets/user_info_tile.dart';
 
 class Perfil extends StatelessWidget {
   @override
@@ -18,22 +16,43 @@ class Perfil extends StatelessWidget {
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.bold,
                 fontSize: 16)),
-        leading: IconButton(
-          icon: Icon(Icons.map_sharp, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+        leadingWidth: 100,
+        leading: Row(
+          children: [
+            IconButton(
+              icon: Icon(Icons.map_sharp, color: Colors.white),
+              onPressed: () {
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.camera_alt_rounded, color: Colors.white),
+              onPressed: () {
+              },
+            ),
+          ],
         ),
         actions: [
-          IconButton(
-          padding: EdgeInsets.only(right: 10),
-          icon: Icon(Icons.camera_alt_rounded, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                color: Colors.white24,
+                borderRadius: BorderRadius.circular(100)
+              ),
+              child: Row(
+                children: [
+                Image.asset(
+                  'assets/images/coin_detailess.png',
+                  height: 25,
+                ),
+                SizedBox(width: 5),
+                Text("200,000")
+              ]),
+          ))
         ],
       ),
+    
       body: ListView(
         shrinkWrap: true,
         physics: BouncingScrollPhysics(),
@@ -74,7 +93,7 @@ class Perfil extends StatelessWidget {
                               padding:
                                   EdgeInsets.only(top: 35, bottom: 2, left: 5),
                               child: Text(
-                                "Nombre",
+                                "Name",
                                 style: TextStyle(
                                     fontSize: 30, fontWeight: FontWeight.bold),
                               )),
@@ -169,7 +188,7 @@ class Perfil extends StatelessWidget {
                       child: DataTable(
                         sortColumnIndex: 2,
                         sortAscending: false,
-                        headingTextStyle: TextStyle(color: AppColor.primary, fontWeight: FontWeight.bold, fontSize: 16),
+                        headingTextStyle: TextStyle(color: Colors.teal[900], fontWeight: FontWeight.bold, fontSize: 16),
                         dataTextStyle: TextStyle(color: Colors.white),
                         columns: [
                       DataColumn(

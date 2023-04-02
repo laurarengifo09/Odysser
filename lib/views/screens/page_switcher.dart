@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:odisserr/views/screens/Perfil.dart';
-import 'package:odisserr/views/screens/bookmarks_page.dart';
-import 'package:odisserr/views/screens/explore_page.dart';
-import 'package:odisserr/views/screens/home_page.dart';
+import 'package:odisserr/views/screens/gameView.dart';
 import 'package:odisserr/views/screens/newHome.dart';
 import 'package:odisserr/views/screens/profile.dart';
 import 'package:odisserr/views/utils/AppColor.dart';
@@ -28,7 +26,7 @@ class _PageSwitcherState extends State<PageSwitcher> {
       extendBody: true,
       body: Stack(
         children: [
-          [NewHome(), Perfil(), BookmarksPage(), Profile()][_selectedIndex],
+          [NewHome(), Perfil(), GameView(), Profile()][_selectedIndex],
           BottomGradientWidget(),
         ],
       ),
@@ -45,9 +43,14 @@ class BottomGradientWidget extends StatelessWidget {
       bottom: 0,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 150,
-        decoration: BoxDecoration(gradient: AppColor.bottomShadow),
-      ),
+        height: 100,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color.fromARGB(255, 24, 58, 168).withOpacity(0.2), 
+            Color.fromARGB(255, 24, 58, 168).withOpacity(0)], 
+            begin: Alignment.bottomCenter, 
+            end: Alignment.topCenter)
+      ))
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:odisserr/views/screens/page_switcher.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_text_field.dart';
 import 'package:odisserr/views/widgets/modals/login_modal.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -100,14 +99,14 @@ class _RegisterModalState extends State<RegisterModal> {
                   },
                   child: Text('Register',
                       style: TextStyle(
-                          color: AppColor.secondary,
+                          color: Colors.blue[800],
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'inter')),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    primary: AppColor.primarySoft,
+                    primary: Colors.blue[800],
                   ),
                 ),
               ),
@@ -138,7 +137,7 @@ class _RegisterModalState extends State<RegisterModal> {
                     children: [
                       TextSpan(
                           style: TextStyle(
-                            color: AppColor.primary,
+                            color: Colors.blue[800],
                             fontWeight: FontWeight.w700,
                             fontFamily: 'inter',
                           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/modals/login_modal.dart';
 import 'package:odisserr/views/widgets/modals/register_modal.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,7 +25,7 @@ class WelcomePage extends StatelessWidget {
               padding: EdgeInsets.only(left: 16, right: 16, bottom: 32),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 60 / 100,
-              decoration: BoxDecoration(gradient: AppColor.linearBlackBottom),
+              // decoration: BoxDecoration(gradient: ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -58,7 +57,7 @@ class WelcomePage extends StatelessWidget {
                         child: ElevatedButton(
                           child: Text('Get Started',
                               style: TextStyle(
-                                  color: AppColor.secondary,
+                                  color: Colors.teal[800],
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'inter')),
@@ -79,7 +78,7 @@ class WelcomePage extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
-                            primary: AppColor.primarySoft,
+                            primary: Colors.blue,
                           ),
                         ),
                       ),
@@ -91,7 +90,7 @@ class WelcomePage extends StatelessWidget {
                         child: OutlinedButton(
                           child: Text('Log in',
                               style: TextStyle(
-                                  color: AppColor.secondary,
+                                  color: Colors.blue,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'inter')),
@@ -113,7 +112,7 @@ class WelcomePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             side: BorderSide(
-                                color: AppColor.secondary.withOpacity(0.5),
+                                color: Colors.blue.withOpacity(0.5),
                                 width: 1),
                             primary: Colors.white,
                           ),

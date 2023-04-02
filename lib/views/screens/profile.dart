@@ -1,38 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:odisserr/models/core/recipe.dart';
-import 'package:odisserr/models/helper/recipe_helper.dart';
-import 'package:odisserr/views/screens/delicious_today_page.dart';
-import 'package:odisserr/views/screens/newly_posted_page.dart';
 import 'package:odisserr/views/screens/profile.dart';
-import 'package:odisserr/views/screens/profile_page.dart';
-import 'package:odisserr/views/screens/search_page.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
-import 'package:odisserr/views/widgets/custom_app_bar.dart';
-import 'package:odisserr/views/widgets/dummy_search_bar.dart';
-import 'package:odisserr/views/widgets/featured_recipe_card.dart';
-import 'package:odisserr/views/widgets/profile_card.dart';
-import 'package:odisserr/views/widgets/publicacion.dart';
-import 'package:odisserr/views/widgets/recipe_tile.dart';
-import 'package:odisserr/views/widgets/recommendation_recipe_card.dart';
+import 'package:odisserr/views/widgets/custom_post.dart';
+import 'package:odisserr/views/widgets/my_custom_post.dart';
 
-import 'home_page.dart';
+import '../widgets/profile_card.dart';
 
 class Profile extends StatelessWidget {
   final List list = [1,2,3,4,5];
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: Text('Perfil',
-            style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w700)),
-        showProfilePhoto: false,
-        profilePhoto: AssetImage('assets/images/user.png'),
-        profilePhotoOnPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => HomePage()));
-        },
+      appBar: AppBar(
+        flexibleSpace: Container(
+        decoration: BoxDecoration(gradient: LinearGradient(colors: [Color.fromARGB(255, 14, 61, 148),Color.fromARGB(255, 26, 99, 209)]))),
+        brightness: Brightness.dark,
+        elevation: 0,
+        centerTitle: true,
+        title: Text('ODYSSER',
+            style: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.bold,
+                fontSize: 16)),
+        leading: 
+          IconButton(
+              icon: Icon(Icons.map_sharp, color: Colors.white),
+              onPressed: () {
+              },
+            )
+        ,
+        actions: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: IconButton(
+              icon: Icon(Icons.camera_alt_rounded, color: Colors.white),
+              onPressed: () {
+              },
+            ),
+          )
+        ],
       ),
+    
       body: ListView(
         shrinkWrap: true,
         physics: BouncingScrollPhysics(),
@@ -53,7 +61,7 @@ class Profile extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: 20, top: 20),
-                      child: Text("Mis Datos", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white)),
+                      child: Text("MY DATA", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900, color: Colors.white)),
                     ),
                     Container(
                       alignment: Alignment.center,
@@ -74,14 +82,17 @@ class Profile extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text("Mis Publicaciones", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                  child: Text("MY POSTS", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900)),
                 ),
                 Container(
                   child: GridView.count(
                             shrinkWrap: true,                 
                             crossAxisCount: 2,
+                            physics: BouncingScrollPhysics(),
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 5,
                             children: List.generate(list.length, (index) {
-                              return Publicacion();
+                              return MyCustomPost(width: 200, height: 200);
                             }),
                     ),
                 ),

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:odisserr/views/screens/auth/welcome_page.dart';
 import 'package:odisserr/views/screens/page_switcher.dart';
 import 'package:odisserr/views/screens/profile.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_text_field.dart';
 import 'package:odisserr/views/widgets/modals/register_modal.dart';
 
@@ -124,14 +123,13 @@ class LoginModal extends StatelessWidget {
                   },
                   child: Text('Login',
                       style: TextStyle(
-                          color: AppColor.secondary,
+                          color: Colors.blue[800],
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'inter')),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    primary: AppColor.primarySoft,
                   ),
                 ),
               ),
@@ -147,7 +145,7 @@ class LoginModal extends StatelessWidget {
                     children: [
                       TextSpan(
                           style: TextStyle(
-                            color: AppColor.primary,
+                            color: Colors.blue[800],
                             fontWeight: FontWeight.w700,
                             fontFamily: 'inter',
                           ),

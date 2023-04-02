@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class CustomPost extends StatefulWidget {
+class MyCustomPost extends StatefulWidget {
   double width;
   double height;
 
-  CustomPost({@required this.width, @required this.height});
+  MyCustomPost({@required this.width, @required this.height});
 
 
   @override
-  CustomPostState createState() => CustomPostState(width: width, height: height);
+  MyCustomPostState createState() => MyCustomPostState(width: width, height: height);
 }
 
 
-class CustomPostState extends State<CustomPost> {
+class MyCustomPostState extends State<MyCustomPost> {
   double width;
   double height;
   bool _isLiked = false;
   int _likes = 0;
   int _comments = 0; //
 
-  CustomPostState({@required this.width, @required this.height});
+  MyCustomPostState({@required this.width, @required this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class CustomPostState extends State<CustomPost> {
                           Icon(Icons.stars_rounded, color: Colors.red[800]),
                           Container(
                             padding: EdgeInsets.only(left: 5,top: 1),
-                            child: Text('ODS: 1 - Hambre cero', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red[800])),
+                            child: Text('ODS #1', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red[800])),
                           ),
                         ]),
                     ),
@@ -121,18 +121,6 @@ class CustomPostState extends State<CustomPost> {
                                 onTap: () {
                                 },
                               ),
-                            ),
-                            Spacer(),
-                            Container(
-                              padding: EdgeInsets.only(right: 15),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.location_pin),
-                                  Container(
-                                      padding: EdgeInsets.only(left: 5),
-                                      child: Text("Cali, Valle del Cauca")
-                                    ),
-                                ]),
                             ),
                           ],
                         ),

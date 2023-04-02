@@ -28,6 +28,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 33
+    buildToolsVersion "30.0.3"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -36,8 +37,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.odisserr"
-        minSdkVersion 19
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 32
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
@@ -54,7 +55,7 @@ android {
     android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.google_maps_in_flutter"
+        applicationId "com.example.odisserr"
         minSdkVersion 20                      // Update from 16 to 20
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
