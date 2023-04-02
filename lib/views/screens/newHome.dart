@@ -1,13 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_event.dart';
 import 'package:odisserr/views/widgets/custom_post.dart';
-import 'package:odisserr/views/widgets/modals/search_filter_modal.dart';
-import 'package:odisserr/views/widgets/user_info_tile.dart';
-
 
 
 class NewHome extends StatefulWidget{

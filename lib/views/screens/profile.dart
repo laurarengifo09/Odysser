@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:odisserr/models/core/recipe.dart';
 import 'package:odisserr/views/screens/profile.dart';
 import 'package:odisserr/views/widgets/custom_post.dart';
 import 'package:odisserr/views/widgets/my_custom_post.dart';

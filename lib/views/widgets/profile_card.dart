@@ -3,8 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:odisserr/models/core/recipe.dart';
-import 'package:odisserr/views/screens/recipe_detail_page.dart';
+
 
 class ProfileCard extends StatelessWidget {
 

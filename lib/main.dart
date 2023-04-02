@@ -2,17 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:odisserr/models/helper/recipe_helper.dart';
 import 'package:odisserr/views/screens/Perfil.dart';
 import 'package:odisserr/views/screens/auth/welcome_page.dart';
-import 'package:odisserr/views/screens/delicious_today_page.dart';
-import 'package:odisserr/views/screens/home_page.dart';
-import 'package:odisserr/views/screens/newly_posted_page.dart';
 import 'package:odisserr/views/screens/page_switcher.dart';
 import 'package:odisserr/views/screens/profile.dart';
-
 import 'package:flutter/widgets.dart';
-import 'package:odisserr/views/widgets/publicacion.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

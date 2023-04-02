@@ -3,7 +3,6 @@ import 'package:odisserr/views/screens/Perfil.dart';
 import 'package:odisserr/views/screens/gameView.dart';
 import 'package:odisserr/views/screens/newHome.dart';
 import 'package:odisserr/views/screens/profile.dart';
-import 'package:odisserr/views/utils/AppColor.dart';
 import 'package:odisserr/views/widgets/custom_bottom_navigation_bar.dart';
 
 class PageSwitcher extends StatefulWidget {
