@@ -4,11 +4,6 @@
 
 
 
-## App Screenshot
-<img src="https://github.com/mrezkys/odisserr/blob/main/demo/banner.jpg" width="auto" height="auto" >
-<img src="https://github.com/mrezkys/odisserr/blob/main/demo/shot.jpg" width="auto" height="auto" >
-<img src="https://github.com/mrezkys/odisserr/blob/main/demo/details.jpg" width="auto" height="auto" >
-
 ## Whats inside
 
 --------
