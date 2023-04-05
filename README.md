@@ -31,7 +31,7 @@ flutter run
 ```
 
 
-## About the Author
+
 
 
 
