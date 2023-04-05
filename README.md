@@ -1,15 +1,7 @@
 # ODYSSER.
 
 ## Introduction
-
-
-
-## Whats inside
-
---------
-
---------
-
+odysser, an application that aims to generate a global community committed to contributing to the Sustainable Development Goals through small and large actions carried out around the world.
 
 
 ## Installation
