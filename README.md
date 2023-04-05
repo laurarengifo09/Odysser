@@ -11,7 +11,7 @@ odysser, an application that aims to generate a global community committed to co
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/mrezkys/odisserr.git
+https://github.com/laurarengifo09/Odysser.git
 ```
 
 **Step 2:**
