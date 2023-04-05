@@ -6,11 +6,30 @@ class CustomPost extends StatefulWidget {
   double width;
   double height;
 
-  CustomPost({@required this.width, @required this.height});
+  final nameUser;
+  final imageUser;
+  final image;
+  final number;
+  final location;
+  final color;
+  int likes;
+  int comments;
 
+  CustomPost({
+    @required this.width, 
+    @required this.height,
+    @required this.nameUser,
+    @required this.imageUser,
+    @required this.image,
+    @required this.number,
+    @required this.location,
+    @required this.color,
+    this.comments = 0,
+    this.likes = 0
+    });
 
   @override
-  CustomPostState createState() => CustomPostState(width: width, height: height);
+  CustomPostState createState() => CustomPostState(width: width, height: height, nameUser: nameUser, imageUser: imageUser, color: color, image: image, location: location, number: number, comments: comments, likes: likes);
 }
 
 
@@ -18,10 +37,28 @@ class CustomPostState extends State<CustomPost> {
   double width;
   double height;
   bool _isLiked = false;
-  int _likes = 0;
-  int _comments = 0; //
 
-  CustomPostState({@required this.width, @required this.height});
+  final nameUser;
+  final imageUser;
+  final image;
+  final number;
+  final location;
+  final color;
+  int likes;
+  int comments;
+
+  CustomPostState({
+    @required this.width, 
+    @required this.height,
+    @required this.nameUser,
+    @required this.imageUser,
+    @required this.image,
+    @required this.number,
+    @required this.location,
+    @required this.color,
+    this.comments = 0,
+    this.likes = 0
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +88,24 @@ class CustomPostState extends State<CustomPost> {
                       width: width,
                       child: Row(
                         children: [
-                          Icon(Icons.stars_rounded, color: Colors.red[800]),
                           Container(
-                            padding: EdgeInsets.only(left: 5,top: 1),
-                            child: Text('ODS: 1 - Hambre cero', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red[800])),
+                            width: 25,
+                            height: 25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(200),
+                              image: DecorationImage(image: AssetImage('assets/images/$imageUser'), fit: BoxFit.cover))
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(left: 5),
+                            child: Text('$nameUser', style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold, color: Color.fromARGB(255, 75, 75, 75))),
+                          ),
+                          Spacer(),
+                          Container(
+                            child: Text('SDG #$number', style: TextStyle(fontWeight: FontWeight.bold,color: color)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(left: 5,top: 1, right: 10),
+                            child: Icon(Icons.stars_rounded, color: color),
                           ),
                         ]),
                     ),
@@ -62,8 +113,9 @@ class CustomPostState extends State<CustomPost> {
                       height: height,
                       width: width,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 202, 202, 202)
-                      )),
+                        color: Color.fromARGB(255, 202, 202, 202),
+                        image: DecorationImage(image: AssetImage('assets/images/$image'), fit: BoxFit.cover)) 
+                      ),
                       Container(
                         padding: EdgeInsets.only(top: 10, left: 10),
                         width: width,
@@ -83,20 +135,21 @@ class CustomPostState extends State<CustomPost> {
                                       )
                                     : Icon(   
                                         Icons.favorite_border,
-                                        size: 25,
+                                        size: 25, 
+                                        color: Color.fromARGB(255, 75, 75, 75)
                                       ),
                                     Container(
                                       padding: EdgeInsets.only(left: 5),
-                                      child: Text('$_likes', style: TextStyle(fontWeight: FontWeight.bold)),
+                                      child: Text('$likes', style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 75, 75, 75))),
                                     ), // Mostrar el número de comentarios
                                   ],
                                 ),
                                 onTap: () {
                                   setState(() {
                                     if (_isLiked) {
-                                      _likes--;
+                                      likes--;
                                     } else {
-                                      _likes++;
+                                      likes++;
                                     }
                                     _isLiked = !_isLiked;
                                   });
@@ -110,11 +163,12 @@ class CustomPostState extends State<CustomPost> {
                                   children: [
                                     Icon(
                                       Icons.comment,
-                                      size: 25,
+                                      size: 25, 
+                                      color: Color.fromARGB(255, 75, 75, 75)
                                     ),
                                     Container(
                                       padding: EdgeInsets.only(left: 5),
-                                      child: Text('$_comments', style: TextStyle(fontWeight: FontWeight.bold))
+                                      child: Text('$comments', style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 75, 75, 75)))
                                     ), 
                                   ],
                                 ),
@@ -127,10 +181,11 @@ class CustomPostState extends State<CustomPost> {
                               padding: EdgeInsets.only(right: 15),
                               child: Row(
                                 children: [
-                                  Icon(Icons.location_pin),
+                                  Icon(Icons.location_pin, 
+                                      color: Color.fromARGB(255, 75, 75, 75)),
                                   Container(
                                       padding: EdgeInsets.only(left: 5),
-                                      child: Text("Cali, Valle del Cauca")
+                                      child: Text("$location", style: TextStyle(color: Color.fromARGB(255, 75, 75, 75)),)
                                     ),
                                 ]),
                             ),

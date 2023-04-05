@@ -8,6 +8,7 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 14, 61, 148),
         body: SingleChildScrollView(
       child: Stack(
         children: [
@@ -24,7 +25,7 @@ class WelcomePage extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.only(left: 16, right: 16, bottom: 32),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 60 / 100,
+              height: MediaQuery.of(context).size.height * 0.8,
               // decoration: BoxDecoration(gradient: ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,14 +34,10 @@ class WelcomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 16),
-                        child: Text('ODISSER',
-                            style: TextStyle(
-                                fontFamily: 'inter',
-                                fontWeight: FontWeight.w700,
-                                fontSize: 32,
-                                color: Color.fromARGB(255, 15, 44, 11))),
+                      Container(
+                        width: 180,
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Image.asset("assets/images/logo.png"),
                       ),
                       // Text("Help you when you're odisserr",
                       //     style: TextStyle(color: Colors.white)),
@@ -55,16 +52,16 @@ class WelcomePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         height: 60,
                         child: ElevatedButton(
+                          
                           child: Text('Get Started',
                               style: TextStyle(
-                                  color: Colors.teal[800],
+                                  color: Color.fromARGB(255, 14, 61, 148),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'inter')),
                           onPressed: () {
                             showModalBottomSheet(
                               context: context,
-                              backgroundColor: Colors.white,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(20),
@@ -76,9 +73,9 @@ class WelcomePage extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
-                            primary: Colors.blue,
                           ),
                         ),
                       ),
@@ -90,7 +87,7 @@ class WelcomePage extends StatelessWidget {
                         child: OutlinedButton(
                           child: Text('Log in',
                               style: TextStyle(
-                                  color: Colors.blue,
+                                  color: Colors.white,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'inter')),
@@ -112,7 +109,7 @@ class WelcomePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             side: BorderSide(
-                                color: Colors.blue.withOpacity(0.5),
+                                color: Colors.white54,
                                 width: 1),
                             primary: Colors.white,
                           ),

@@ -1,0 +1,45 @@
+{
+    "description":"The Sustainable Development Goals (SDGs) are a set of 17 objectives agreed upon by the United Nations (UN) in 2015 to address the world's most urgent challenges in sustainable development. The SDGs include goals such as eradicating poverty, combating climate change, promoting gender equality, and promoting education and health for all.\nThe SDGs represent a global framework for collective action and progress towards a more just, prosperous, and sustainable future for all people and the planet. Achieving these goals requires collaboration from governments, businesses, civil society, and citizens from around the world.",
+    "ods":[
+        {
+            "sdg":1,
+            "title": "SDG #1: “NO POVERTY”",
+            "content":"The main objective of this SDG is to eradicate extreme poverty worldwide. Extreme poverty is defined as living on less than $1.90 per day, according to the World Bank. SDG 1 aims to ensure that all people have access to basic resources such as food, clean water, healthcare, and adequate housing. It also focuses on the economic empowerment of people in poverty situations, through job creation and access to economic opportunities. To achieve this goal, it is necessary to address the root causes of poverty, such as economic inequality, lack of access to education, and gender discrimination. Actions to contribute to this goal include donating to charities that work in poor countries, supporting social enterprises that empower people in poverty situations, and participating in microfinance projects. Additionally, it is important to promote government policies that address economic inequality and improve access to basic resources for all people."
+        },
+        {
+            "sdg":2,
+            "title": "SDG #2: “ZERO HUNGER”",
+            "content": "Focuses on promoting sustainable agriculture and improving agricultural production to ensure food security. This includes supporting small-scale farmers and implementing sustainable agricultural practices to preserve natural resources and increase productivity. Another important aspect of SDG 2 is improving people's nutrition and health, especially children, through school feeding programs and healthcare to prevent and treat malnutrition. Additionally, this goal also seeks to promote equal access to food and reduce disparities in nutrition among different population groups.The Sustainable Development Goal (SDG) number 2 is \"Zero Hunger\". The aim of this SDG is to eradicate hunger and malnutrition in all its forms worldwide, ensuring access to nutritious and sustainable food for all.SDG 2 also focuses on promoting sustainable agriculture and improving agricultural production to ensure food security. This includes supporting small-scale farmers and implementing sustainable agricultural practices to preserve natural resources and increase productivity. Another important aspect of SDG 2 is improving people's nutrition and health, especially children, through school feeding programs and healthcare to prevent and treat malnutrition. Additionally, this goal also seeks to promote equal access to food and reduce disparities in nutrition among different population groups. Some actions to contribute to this goal include supporting organizations working to improve food security and nutrition, adopting responsible food consumption practices and reducing waste, and supporting initiatives that promote sustainable agriculture. It is also important to pressure governments to develop policies and programs that promote food security and nutrition, and ensure that the most vulnerable people have access to food and the resources needed to lead a healthy life."
+        },
+        {
+            "sdg":3,
+            "title": "SDG #3: “GOOD HEALTH AND WELL-BEING”",
+            "content":"The Sustainable Development Goal (SDG) 3 aims to ensure healthy lives and promote well-being for all at all ages. Specifically, it aims to ensure universal access to quality healthcare services, including prevention, treatment, and control of communicable and non-communicable diseases. It also focuses on reducing maternal and child mortality, improving sexual and reproductive health, and strengthening countries' capacity to address global health risks and threats. Additionally, SDG 3 seeks to promote healthy lifestyle practices and physical activity. Actions to help achieve this goal include promoting disease prevention and treatment, improving access to health services and health education, and promoting healthy lifestyle practices and physical activity."
+        },
+        {
+            "sdg":4,
+            "title": "SDG #4: “QUALITY EDUCATION”",
+            "content":"SDG 4 aims to provide access to quality early childhood development, primary, secondary, and tertiary education for all, regardless of their social or economic background. It also aims to promote relevant skills for employment, entrepreneurship, and sustainable development, as well as increase the number of youth and adults who have relevant skills for employment. Furthermore, SDG 4 emphasizes the importance of eliminating gender disparities in education and promoting inclusive and safe learning environments for all. To contribute to achieving SDG 4, individuals can take actions such as advocating for increased funding and policies that prioritize education, supporting organizations that provide educational resources to underserved communities, promoting access to education for girls and women, encouraging lifelong learning opportunities, and advocating for safe and inclusive learning environments. Additionally, promoting relevant skills and training programs, utilizing technology and innovative teaching methods, and engaging with policymakers can help ensure equitable access to quality education for all."
+        },
+        {
+            "sdg":5,
+            "title": "SDG #5:  “GENDER EQUALITY”",
+            "content":"Is focused on gender equality and empowerment of women and girls. It aims to end discrimination against women and girls, and promote their equal participation in political, economic, and public life. This goal recognizes that gender equality is not only a human right, but also essential to achieving sustainable development. It seeks to eliminate all forms of violence and harmful practices against women and girls, and ensure their access to sexual and reproductive health services and rights. Additionally, SDG 5 promotes the recognition and value of unpaid care and domestic work, and works towards achieving equal opportunities and treatment for women and girls in all spheres of life. To contribute to SDG 5, individuals can take actions such as supporting organizations that provide education and training for women and girls, advocating for gender equality policies, and promoting women's leadership and political participation. They can also work towardseliminating gender-based violence and harmful practices, raising awareness about gender stereotypes and discrimination, engaging men and boys in promoting gender equality, promoting access to sexual and reproductive health services, supporting marginalized and vulnerable women and girls, advocating for gender-sensitive policies, and promoting equal pay and employment opportunities for women. These actions can help empower women and girls, eliminate gender discrimination, and promote gender equality in all spheres of life."
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

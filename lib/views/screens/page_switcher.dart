@@ -6,11 +6,19 @@ import 'package:odisserr/views/screens/profile.dart';
 import 'package:odisserr/views/widgets/custom_bottom_navigation_bar.dart';
 
 class PageSwitcher extends StatefulWidget {
+  int coins;
+
+  PageSwitcher({this.coins =200000});
+
   @override
-  _PageSwitcherState createState() => _PageSwitcherState();
+  _PageSwitcherState createState() => _PageSwitcherState(coins: coins);
 }
 
 class _PageSwitcherState extends State<PageSwitcher> {
+
+  int coins;
+  _PageSwitcherState({this.coins =200000});
+
   int _selectedIndex = 0;
 
   _onItemTapped(int index) {
@@ -25,7 +33,7 @@ class _PageSwitcherState extends State<PageSwitcher> {
       extendBody: true,
       body: Stack(
         children: [
-          [NewHome(), Perfil(), GameView(), Profile()][_selectedIndex],
+          [NewHome(coins: coins,), Perfil(), GameView(), Profile()][_selectedIndex],
           BottomGradientWidget(),
         ],
       ),

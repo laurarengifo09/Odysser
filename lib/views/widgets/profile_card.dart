@@ -39,9 +39,9 @@ class ProfileCard extends StatelessWidget {
                     height: 150,
                     alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
-                      image: DecorationImage(image: AssetImage('assets/images/profile2.jpg'), fit: BoxFit.cover),
+                      image: DecorationImage(image: AssetImage('assets/images/post(1).jpg'), fit: BoxFit.cover),
                     ),
                   ),
                   Container(
@@ -58,16 +58,16 @@ class ProfileCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Nombre",
+                                "Name",
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
+                                    color: Colors.white, fontSize: 11),
                               ),
                               Text(
-                                "Cali, Valle del Cauca",
+                                "Daniela Rengifo",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 14),
                               ),
                             ],
                           )),
@@ -80,16 +80,16 @@ class ProfileCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Nivel",
+                                "Level",
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
+                                    color: Colors.white, fontSize: 11),
                               ),
                               Text(
-                                "Explorador Junior",
+                                "Junior Scout",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 14),
                               ),
                             ],
                           )),
@@ -102,16 +102,16 @@ class ProfileCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Ubicacion",
+                                "Location",
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 12),
+                                    color: Colors.white, fontSize: 11),
                               ),
                               Text(
                                 "Cali, Valle del Cauca",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 13),
                               ),
                             ],
                           ))

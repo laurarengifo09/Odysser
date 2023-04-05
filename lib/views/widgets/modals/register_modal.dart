@@ -99,14 +99,14 @@ class _RegisterModalState extends State<RegisterModal> {
                   },
                   child: Text('Register',
                       style: TextStyle(
-                          color: Colors.blue[800],
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'inter')),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    primary: Colors.blue[800],
+                    primary: Color.fromARGB(255, 14, 61, 148),
                   ),
                 ),
               ),

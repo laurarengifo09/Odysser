@@ -33,23 +33,21 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             items: [
               (widget.selectedIndex == 0)
                   ? BottomNavigationBarItem(
-                      icon: SvgPicture.asset('assets/icons/home-filled.svg',
-                          color: Color.fromARGB(255, 15, 44, 124)),
+                      icon: Icon(Icons.supervised_user_circle_rounded,
+                          color: Color.fromARGB(255, 15, 44, 124), size: 30),
                       label: '')
                   : BottomNavigationBarItem(
-                      icon: SvgPicture.asset('assets/icons/home.svg',
-                          color: Colors.grey[600]),
+                      icon: Icon(Icons.supervised_user_circle_outlined,
+                          color: Colors.grey[600], size: 30),
                       label: ''),
               (widget.selectedIndex == 1)
                   ? BottomNavigationBarItem(
-                      icon: SvgPicture.asset('assets/icons/discover-filled.svg',
-                          color: Color.fromARGB(255, 15, 44, 124),
-                          height: 28,
-                          width: 26),
+                      icon: Icon(Icons.explore,
+                          color: Color.fromARGB(255, 15, 44, 124), size: 30),
                       label: '')
                   : BottomNavigationBarItem(
-                      icon: SvgPicture.asset('assets/icons/discover.svg',
-                          color: Colors.grey[600], height: 28, width: 26),
+                      icon: Icon(Icons.explore_outlined,
+                          color: Colors.grey[600], size: 30),
                       label: ''),
               (widget.selectedIndex == 2)
                   ? BottomNavigationBarItem(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:odisserr/views/screens/page_camera.dart';
+import 'package:odisserr/views/screens/page_maps.dart';
 
 class Perfil extends StatelessWidget {
   @override
@@ -22,11 +24,17 @@ class Perfil extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.map_sharp, color: Colors.white),
               onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PageMaps()));
               },
             ),
             IconButton(
               icon: Icon(Icons.camera_alt_rounded, color: Colors.white),
               onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PageCamera()));
               },
             ),
           ],
@@ -47,7 +55,7 @@ class Perfil extends StatelessWidget {
                   height: 25,
                 ),
                 SizedBox(width: 5),
-                Text("200,000")
+                Text("200000")
               ]),
           ))
         ],
@@ -62,7 +70,6 @@ class Perfil extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 24),
             child: GestureDetector(
               onTap: () {
-                print('Code to open file manager');
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +88,7 @@ class Perfil extends StatelessWidget {
                           decoration: BoxDecoration(
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(200),
-                              image: DecorationImage(image: AssetImage('assets/images/user.png'))),
+                              image: DecorationImage(image: AssetImage('assets/images/post(1).jpg'), fit: BoxFit.cover)),
                         ),
                       ),
                       Column(
@@ -91,14 +98,14 @@ class Perfil extends StatelessWidget {
                         children: [
                           Container(
                               padding:
-                                  EdgeInsets.only(top: 35, bottom: 2, left: 5),
+                                  EdgeInsets.only(top: 35, bottom: 5, left: 1),
                               child: Text(
-                                "Name",
+                                "Daniela Rengifo",
                                 style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
+                                    fontSize: 20, fontWeight: FontWeight.bold),
                               )),
                           Container(
-                              width: 300,
+                              width: MediaQuery.of(context).size.width *0.43,
                               padding: EdgeInsets.symmetric(horizontal: 16),
                               decoration: BoxDecoration(
                                   border: Border(
@@ -108,9 +115,9 @@ class Perfil extends StatelessWidget {
                           Container(
                               padding: EdgeInsets.only(top: 7, left: 12),
                               child: Text(
-                                "Level 1: Recolector Junior",
+                                "Level 3: Junior \nScout",
                                 style: TextStyle(
-                                    fontSize: 18, color: Colors.black45),
+                                    fontSize: 12, color: Colors.black45),
                               ))
                         ],
                       )
@@ -127,29 +134,28 @@ class Perfil extends StatelessWidget {
             "GLOBAL RANKING",
             textAlign: TextAlign.left,
             style: TextStyle(
+              color: Color.fromARGB(255, 14, 61, 148),
               fontSize: 30,
               fontWeight: FontWeight.bold,
           ))),
           Padding(padding: EdgeInsets.all(10),child:                           
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 100),
+              width: 100,
               decoration: BoxDecoration(
                 border: Border(
                       bottom: BorderSide(
                           color: Colors.black.withOpacity(0.1),
                           width: 1,
-                          ))))),
+          ))))),
           Container(
-              padding: EdgeInsets.all(10),
+              
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [Color.fromARGB(255, 13, 80, 204),Color.fromARGB(255, 0, 145, 48)], 
-                    begin: Alignment.topLeft, end: Alignment.bottomRight),
-                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromARGB(255, 9, 38, 92),
                     boxShadow: [
                         BoxShadow(
-                          color: Color(0xFF094542).withOpacity(0.4),
+                          color: Color.fromARGB(255, 14, 61, 148).withOpacity(0.4),
                           spreadRadius: 1,
                           blurRadius: 7,
                           blurStyle: BlurStyle.normal,
@@ -184,12 +190,15 @@ class Perfil extends StatelessWidget {
                                           width: 1))))),
                     Container(
                       width: 430,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(7)),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [Color.fromARGB(255, 14, 61, 148),Color.fromARGB(255, 26, 99, 209)]), 
+                        borderRadius: BorderRadius.circular(7)),
                       child: DataTable(
+                        columnSpacing: 20,
                         sortColumnIndex: 2,
                         sortAscending: false,
-                        headingTextStyle: TextStyle(color: Colors.teal[900], fontWeight: FontWeight.bold, fontSize: 16),
-                        dataTextStyle: TextStyle(color: Colors.white),
+                        headingTextStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                        dataTextStyle: TextStyle(color: Colors.black87),
                         columns: [
                       DataColumn(
                             label: Center(child: Text("Name",
@@ -218,64 +227,178 @@ class Perfil extends StatelessWidget {
                                 DataCell(
                                   Row(
                                     children: [
-                                      Image.asset(
-                                        'assets/images/user.png',
+                                      Container(
+                                        width: 25,
                                         height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(200),
+                                            image: DecorationImage(image: AssetImage('assets/images/post(5).jpg'), fit: BoxFit.cover)),
                                       ),
                                       SizedBox(width: 10),
-                                      Text("Jose Escobar"),
+                                      Text("@jdepap2"),
                                     ],
                                   ),
                                 ),
-                                DataCell(Text("100")),
+                                DataCell(Text("10")),
                                 DataCell(Text("Colombia")),
                                 // DataCell(Image.asset('assets/images/user.png'))
                               ],
                               
+                              
                               color: MaterialStateColor.resolveWith(
-                                  (states) => Colors.amber)),
+                                  (states) => Colors.amber[200])),
                           DataRow(
                             cells: [
                               DataCell(
                                 Row(
                                   children: [
-                                    Image.asset(
-                                      'assets/images/user.png',
-                                      height: 25,
-                                    ),
+                                      Container(
+                                        width: 25,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(200),
+                                            image: DecorationImage(image: AssetImage('assets/images/post(3).jpg'), fit: BoxFit.cover)),
+                                      ),
                                     SizedBox(width: 10),
-                                    Text("Laura"),
+                                    Text("@niko.kpolo"),
                                   ],
                                 ),
                               ),
-                              DataCell(Text("81")),
-                              DataCell(Text("Colombia")),
+                              DataCell(Text("5")),
+                              DataCell(Text("Spain")),
                               
                             ],
                             color: MaterialStateColor.resolveWith(
-                                  (states) => Colors.grey[500])
+                                  (states) => Colors.grey[300])
                           ),
                           DataRow(
                             cells: [
                               DataCell(
                                 Row(
                                   children: [
-                                    Image.asset(
-                                      'assets/images/user.png',
-                                      height: 25,
-                                    ),
+                                      Container(
+                                        width: 25,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(200),
+                                            image: DecorationImage(image: AssetImage('assets/images/post(1).jpg'), fit: BoxFit.cover)),
+                                      ),
                                     SizedBox(width: 10),
-                                    Text("Danielaaa"),
+                                    Text("@s_rengifo.97"),
                                   ],
                                 ),
                               ),
-                              DataCell(Text("80")),
+                              DataCell(Text("3")),
+                              DataCell(Text("England")),
+                              
+                            ],
+                            color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.deepOrange[200])
+                          )
+                          ,DataRow(
+                            cells: [
+                              DataCell(
+                                Row(
+                                  children: [
+                                      Container(
+                                        width: 25,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(200),
+                                            image: DecorationImage(image: AssetImage('assets/images/post(2).jpg'), fit: BoxFit.cover)),
+                                      ),
+                                    SizedBox(width: 10),
+                                    Text("@rodrigorafa_mora"),
+                                  ],
+                                ),
+                              ),
+                              DataCell(Text("2")),
                               DataCell(Text("Colombia")),
                               
                             ],
                             color: MaterialStateColor.resolveWith(
-                                  (states) => Colors.deepOrange[700])
+                                  (states) => Colors.white)
                           )
+                        ,DataRow(
+                            cells: [
+                              DataCell(
+                                Row(
+                                  children: [
+                                      Container(
+                                        width: 25,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(200),
+                                            image: DecorationImage(image: AssetImage('assets/images/post(4).jpg'), fit: BoxFit.cover)),
+                                      ),
+                                    SizedBox(width: 10),
+                                    Text("@nicol_paz09"),
+                                  ],
+                                ),
+                              ),
+                              DataCell(Text("1")),
+                              DataCell(Text("South Korea")),
+                              
+                            ],
+                            color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.white)
+                          )
+                        ,DataRow(
+                            cells: [
+                              DataCell(
+                                Row(
+                                  children: [
+                                      Container(
+                                        width: 25,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(200),
+                                            image: DecorationImage(image: AssetImage('assets/images/post(3).jpg'), fit: BoxFit.cover)),
+                                      ),
+                                    SizedBox(width: 10),
+                                    Text("@01nanii.xd"),
+                                  ],
+                                ),
+                              ),
+                              DataCell(Text("1")),
+                              DataCell(Text("Hungary")),
+                              
+                            ],
+                            color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.white)
+                          )
+                        ,DataRow(
+                            cells: [
+                              DataCell(
+                                Row(
+                                  children: [
+                                      Container(
+                                        width: 25,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(200),
+                                            image: DecorationImage(image: AssetImage('assets/images/user.png'), fit: BoxFit.cover)),
+                                      ),
+                                    SizedBox(width: 10),
+                                    Text("@whis_siud"),
+                                  ],
+                                ),
+                              ),
+                              DataCell(Text("1")),
+                              DataCell(Text("Russia")),
+                              
+                            ],
+                            color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.white)
+                          )
+                        
                         ],
                       ),
                     )

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,7 @@ import 'package:odisserr/views/screens/auth/welcome_page.dart';
 import 'package:odisserr/views/screens/page_switcher.dart';
 import 'package:odisserr/views/screens/profile.dart';
 import 'package:flutter/widgets.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 
 void main() async {
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PageSwitcher());
+      home: WelcomePage());
   }
 }
 
@@ -35,6 +38,14 @@ class MyAppState extends State<MyAppSt> {
   @override
   void initState() {
     super.initState();
+
+    if(Platform.isAndroid){
+      Permission.camera.request();
+      Permission.location.request();
+    }
+    // In Android we need to request the storage permission,
+    // while in iOS is the photos permission
+
     getUsers();
   }
 

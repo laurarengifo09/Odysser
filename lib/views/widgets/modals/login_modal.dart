@@ -123,11 +123,12 @@ class LoginModal extends StatelessWidget {
                   },
                   child: Text('Login',
                       style: TextStyle(
-                          color: Colors.blue[800],
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'inter')),
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 14, 61, 148),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                   ),
@@ -145,7 +146,7 @@ class LoginModal extends StatelessWidget {
                     children: [
                       TextSpan(
                           style: TextStyle(
-                            color: Colors.blue[800],
+                            color: Color.fromARGB(255, 14, 61, 148),
                             fontWeight: FontWeight.w700,
                             fontFamily: 'inter',
                           ),
